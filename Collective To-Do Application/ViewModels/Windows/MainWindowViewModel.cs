@@ -5,15 +5,21 @@ namespace Collective_To_Do_Application.ViewModels.Windows
 {
     public partial class MainWindowViewModel : ObservableObject
     {
-        [ObservableProperty]
-        private NavigationStore currNavigationStore;
-
-        public ObservableObject ViewModel => CurrNavigationStore.CurrentViewModel;
+        private NavigationStore navigationStore;
+        
+        public ObservableObject CurrentViewModel => navigationStore.CurrentViewModel;
 
         public MainWindowViewModel(NavigationStore navigationStore)
         {
             navigationStore.CurrentViewModel = new LaunchViewModel(navigationStore);
-            this.CurrNavigationStore = navigationStore;
+            this.navigationStore = navigationStore;
+
+            // UpdateProperty if it is a CurrentViewModel property
+            this.navigationStore.PropertyChanged += (sender, args) =>
+            {
+                if (args.PropertyName == "CurrentViewModel")
+                    OnPropertyChanged("CurrentViewModel");
+            };
         }
     }
 }
