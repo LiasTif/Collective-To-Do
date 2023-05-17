@@ -14,7 +14,6 @@
             </ResourceDictionary.MergedDictionaries>
             <c:EnterButtonTextConventer x:Key="EnterButtonTextConventer"/>
             <c:IndexToStyleConverter x:Key="IndexToStyleConverter"/>
-            <c:TbFocusChangeConventer x:Key="TbFocusChangeConventer"/>
         </ResourceDictionary>
     </UserControl.Resources>
 
@@ -77,7 +76,6 @@
                 Grid.Row="3"
                 MaxWidth="{Binding ElementName=tb_vbLName, Path=ActualWidth}">
             <ItemsControl
-                x:Name="icTextBoxes"
                 ItemsSource="{Binding TextBoxes}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -89,26 +87,12 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <TextBox
-                                x:Name="tbPin"
                                 MaxWidth="10"
-                                FocusManager.FocusedElement="{Binding FocusedTextBox,
-                                                                      UpdateSourceTrigger=PropertyChanged,
-                                                                      Mode=TwoWay}"
+                                Text="{Binding Text,
+                                               Mode=TwoWay,
+                                               UpdateSourceTrigger=PropertyChanged}"
                                 Style="{Binding Id,
                                                 Converter={StaticResource IndexToStyleConverter}}">
-                            <TextBox.Text>
-                                <MultiBinding Converter="{StaticResource TbFocusChangeConventer}">
-                                    <Binding
-                                        ElementName="tbPin"
-                                        Path="Text"
-                                        UpdateSourceTrigger="PropertyChanged"
-                                        Mode="TwoWay"/>
-                                    <Binding
-                                        ElementName="ucMain"
-                                        Path="DataContext"/>
-                                    <Binding Path="."/>
-                                </MultiBinding>
-                            </TextBox.Text>
                         </TextBox>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>

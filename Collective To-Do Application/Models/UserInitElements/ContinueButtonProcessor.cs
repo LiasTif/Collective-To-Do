@@ -13,14 +13,18 @@ namespace Collective_To_Do_Application.Models.UserInitElements
 
         public void SetButtonStatus(ObservableCollection<TextBoxViewModel> textBoxes, string firstName, string lastName)
         {
-            // IsContinueButEnable is true by default, if one field empty - change it to false
+            // IsContinueButEnable is true by default, if anyone field are empty - change IsContinueButEnable to false
             IsContinueButEnable = true;
-            if ((firstName == null || firstName == "") || (lastName == null || lastName == ""))
+
+            if (firstName == null || firstName == "" || lastName == null || lastName == "")
                 IsContinueButEnable = false;
             else
                 foreach (TextBoxViewModel textBox in textBoxes)
                     if (textBox.Text == null || textBox.Text == "")
+                    {
                         IsContinueButEnable = false;
+                        break;
+                    }
         }
     }
 }

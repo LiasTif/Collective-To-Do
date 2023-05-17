@@ -13,8 +13,8 @@ namespace Collective_To_Do_Application.ViewModels.Elements
 
         public int Id { get; set; }
 
-        private string _text;
-        public string Text
+        private string? _text;
+        public string? Text
         {
             get => _text;
             set

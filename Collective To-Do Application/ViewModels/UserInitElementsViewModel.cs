@@ -19,8 +19,6 @@ namespace Collective_To_Do_Application.ViewModels
         public PersonDataProcessor PersonDataProcessor { get; set; }
         public ObservableCollection<TextBoxViewModel> TextBoxes { get; set; }
 
-        [ObservableProperty]
-        private TextBoxViewModel focusedTextBox;
         private NavigationStore navigationStore;
         #endregion
 
