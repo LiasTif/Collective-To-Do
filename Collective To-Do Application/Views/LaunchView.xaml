@@ -24,8 +24,10 @@
         <!--#endregion-->
 
         <!--header-->
-        <Viewbox Grid.Column="1" Grid.ColumnSpan="3"
-                 Grid.Row="1" Margin="100"
+        <Viewbox Grid.Column="1"
+                 Grid.ColumnSpan="3"
+                 Grid.Row="1"
+                 Margin="100"
                  HorizontalAlignment="Center"
                  MaxHeight="240">
             <TextBlock Text="TeamSchedule"/>
@@ -38,14 +40,18 @@
             <StackPanel>
                 <!--singUp button-->
                 <Viewbox MaxHeight="70" Margin="0,0,0,30">
-                    <Button MinWidth="60" Content="Log In"
-                    Command="{Binding NavigateLoginViewCommand}"/>
+                    <Button
+                        MinWidth="60"
+                        Content="Login"
+                        Command="{Binding NavigateLoginViewCommand}"/>
                 </Viewbox>
 
                 <!--singIn button-->
                 <Viewbox MaxHeight="70">
-                    <Button MinWidth="60" Content="Registration"
-                    Command="{Binding NavigateRegistrationViewCommand}"/>
+                    <Button
+                        MinWidth="60"
+                        Content="Registration"
+                        Command="{Binding NavigateRegistrationViewCommand}"/>
                 </Viewbox>
             </StackPanel>
         </Viewbox>

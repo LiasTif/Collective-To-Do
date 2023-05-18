@@ -17,24 +17,15 @@ namespace Collective_To_Do_Application.Conventers
 
             UserInitElementsViewModel userInitElementsVM = null;
 
-            //if (value is RegistrationViewModel registrationVM)
-            //{
-            //    userInitElementsVM = new UserInitElementsViewModel(registrationVM.NavigationStore)
-            //    {
-            //        ParentViewModel = registrationVM
-            //    };
-            //    registrationVM.UserInitElementsViewModel = userInitElementsVM;
-            //}
-            //else if (value is LoginViewModel loginVM)
-            //{
-            //    userInitElementsVM = new UserInitElementsViewModel(loginVM.NavigationStore)
-            //    {
-            //        ParentViewModel = loginVM
-            //    };
-            //    loginVM.UserInitElementsViewModel = userInitElementsVM;
-            //}
-
-            if (value is LoginViewModel loginVM)
+            if (value is RegistrationViewModel registrationVM)
+            {
+                userInitElementsVM = new UserInitElementsViewModel(registrationVM.NavigationStore)
+                {
+                    ParentViewModel = registrationVM
+                };
+                registrationVM.UserInitElementsViewModel = userInitElementsVM;
+            }
+            else if (value is LoginViewModel loginVM)
             {
                 userInitElementsVM = new UserInitElementsViewModel(loginVM.NavigationStore)
                 {

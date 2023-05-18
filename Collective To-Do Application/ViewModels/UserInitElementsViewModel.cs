@@ -35,6 +35,8 @@ namespace Collective_To_Do_Application.ViewModels
         /// <param name="navigationStore">current instance of NavigationStore</param>
         public UserInitElementsViewModel(NavigationStore navigationStore)
         {
+            this.navigationStore = navigationStore;
+
             // Create TextBoxes and add it`s to ObservableCollection
             TextBoxes = new ObservableCollection<TextBoxViewModel>();
             for (int i = 0; i < TextBoxesCount; i++) { TextBoxes.Add(new TextBoxViewModel(this) { Id = i }); }

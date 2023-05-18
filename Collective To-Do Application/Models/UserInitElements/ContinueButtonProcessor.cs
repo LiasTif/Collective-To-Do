@@ -19,12 +19,16 @@ namespace Collective_To_Do_Application.Models.UserInitElements
             if (firstName == null || firstName == "" || lastName == null || lastName == "")
                 IsContinueButEnable = false;
             else
+            {
                 foreach (TextBoxViewModel textBox in textBoxes)
+                {
                     if (textBox.Text == null || textBox.Text == "")
                     {
                         IsContinueButEnable = false;
                         break;
                     }
+                }
+            }
         }
     }
 }
