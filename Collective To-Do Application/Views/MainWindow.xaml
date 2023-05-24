@@ -22,6 +22,9 @@
                 <DataTemplate DataType="{x:Type vm:RegistrationViewModel}">
                     <v:RegistrationView/>
                 </DataTemplate>
+                <DataTemplate DataType="{x:Type vm:ScheduleMenuViewModel}">
+                    <v:ScheduleMenuView/>
+                </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>
     </Grid>

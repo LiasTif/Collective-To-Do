@@ -14,7 +14,7 @@ namespace Collective_To_Do_Application.ViewModels
         private const byte TextBoxesCount = 4;
 
         #region properties
-        public ObservableObject ParentViewModel { get; set; }
+        public ObservableObject? ParentViewModel { get; set; }
         public ContinueButtonProcessor ContinueButtonProcessor { get; set; } = new ContinueButtonProcessor();
         public PersonDataProcessor PersonDataProcessor { get; set; }
         public ObservableCollection<TextBoxViewModel> TextBoxes { get; set; }
@@ -24,9 +24,10 @@ namespace Collective_To_Do_Application.ViewModels
 
         #region commands
         private void NavigateLaunchView() => navigationStore.CurrentViewModel = new LaunchViewModel(navigationStore);
+        private void NavigateScheduleMenuView() => navigationStore.CurrentViewModel = new ScheduleMenuViewModel(navigationStore);
 
         public ICommand NavigateLaunchViewCommand { get; }
-        //public ICommand NavigateScheduleMenuView { get; }
+        public ICommand NavigateScheduleMenuViewCommand { get; }
         #endregion
 
         /// <summary>
@@ -45,6 +46,9 @@ namespace Collective_To_Do_Application.ViewModels
 
             // Set LaunchViewModel like CurrentViewModel
             NavigateLaunchViewCommand = new RelayCommand(NavigateLaunchView);
+
+            // Set ScheduleViewModel like CurrentViewModel
+            NavigateScheduleMenuViewCommand = new RelayCommand(NavigateScheduleMenuView);
         }
     }
 }

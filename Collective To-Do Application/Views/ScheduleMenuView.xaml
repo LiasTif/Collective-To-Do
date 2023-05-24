@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="Collective_To_Do_Application.Views.ScheduleMenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Collective_To_Do_Application.Views"
+             mc:Ignorable="d" d:Height="1080" d:Width="1960">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/Collective To-Do Application;component/Resources/MainResources.xaml"/>
+    </UserControl.Resources>
+
+    <Grid Background="#fff">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="0.25*"/>
+                <ColumnDefinition Width="2.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Viewbox Grid.Column="1">
+                <TextBlock
+                    Text="TeamSchedule"
+                    FontFamily="Dongle"
+                    FontWeight="Regular"
+                    Margin="1"/>
+            </Viewbox>
+
+            <Grid
+                Grid.Column="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Viewbox
+                    Grid.Row="1"
+                    Grid.Column="1">
+                    <StackPanel
+                        Orientation="Horizontal">
+                        <Button
+                            Content="Refresh"
+                            Margin="0,0,5,0"
+                            FontFamily="Dongle"
+                            FontWeight="Light"/>
+                        <Button
+                            Content="Profile"
+                            FontFamily="Dongle"
+                            FontWeight="Light"/>
+                        <Button
+                            Content="Add Task"
+                            Margin="5,0,5,0"
+                            FontFamily="Dongle"
+                            FontWeight="Light"/>
+                        <Button
+                            Content="Exit"
+                            FontFamily="Dongle"
+                            FontWeight="Light"
+                            Command="{Binding ApplicationExitCommand}"/>
+                    </StackPanel>
+                </Viewbox>
+            </Grid>
+        </Grid>
+
+        <Border
+            Grid.Row="1"
+            Background="#f1f1f1">
+            <DataGrid
+                x:Name="dgMain"
+                Background="{x:Null}"
+                Margin="7"
+                BorderThickness="0"
+                GridLinesVisibility="Horizontal"
+                ColumnHeaderStyle="{StaticResource dgColumnHeader}"
+                HeadersVisibility="Column">
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>
