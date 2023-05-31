@@ -23,13 +23,71 @@
 
     <!--#region ScheduleMenu view styles-->
     <Style TargetType="{x:Type DataGridColumnHeader}" x:Key="dgColumnHeader">
+        <Style.Resources>
+
+            <!-- This style is required for the column resize thumbs -->
+            <Style x:Key="ColumnHeaderGripperStyle" TargetType="{x:Type Thumb}">
+                <Setter Property="Width" Value="8"/>
+                <Setter Property="Margin" Value="50,0,0,0"/>
+                <Setter Property="Background" Value="Red" />
+                <Setter Property="Cursor" Value="SizeWE" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Thumb}">
+                            <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" />
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Style.Resources>
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Height" Value="25"/>
+        <Setter Property="Height" Value="30"/>
         <Setter Property="SeparatorBrush" Value="#737373"/>
+        <Setter Property="SeparatorVisibility" Value="Visible"/>
         <Setter Property="FontFamily" Value="Dongle"/>
         <Setter Property="FontWeight" Value="Regular"/>
         <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Margin" Value="5,0,0,0"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                    <Grid Background="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <ContentPresenter Grid.Row="0" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+                        <Thumb Grid.Row="0" x:Name="PART_RightHeaderGripper" HorizontalAlignment="Right" Style="{StaticResource ColumnHeaderGripperStyle}" />
+
+                        <Rectangle Grid.Row="1" Height="1" HorizontalAlignment="Stretch" Stroke="Black"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type DataGridCell}" x:Key="dgCell">
+        <Setter Property="Margin" Value="5,0,0,0"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="BorderBrush" Value="{x:Null}"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
     <!--#endregion-->
 </ResourceDictionary>

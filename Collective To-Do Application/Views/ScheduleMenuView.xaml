@@ -80,10 +80,10 @@
             <DataGrid
                 x:Name="dgMain"
                 Background="{x:Null}"
-                Margin="7"
                 BorderThickness="0"
                 GridLinesVisibility="Horizontal"
-                ColumnHeaderStyle="{StaticResource dgColumnHeader}"
+                ColumnHeaderStyle="{DynamicResource dgColumnHeader}"
+                CellStyle="{StaticResource dgCell}"
                 HeadersVisibility="Column">
             </DataGrid>
         </Border>
