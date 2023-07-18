@@ -97,11 +97,44 @@
 
     <DataTemplate x:Key="CheckBoxTemplate">
         <CheckBox HorizontalAlignment="Center" Style="{DynamicResource dgCheckBoxStyle}"/>
+        
+        
     </DataTemplate>
 
     <Style TargetType="{x:Type CheckBox}" x:Key="dgCheckBoxStyle">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Grid>
+                        <Rectangle x:Name="R_Filling">
+                            <Rectangle.Fill>
+                                <SolidColorBrush Color="Transparent"/>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <Rectangle
+                            x:Name="R_Outline"
+                            Stroke="#000"
+                            StrokeThickness="1"/>
+                        <ContentPresenter
+                            x:Name="content"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Margin="10"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="R_Filling" Property="Fill">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="#000"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
     <!--#endregion-->
 </ResourceDictionary>

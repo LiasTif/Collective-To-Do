@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -33,8 +34,8 @@ namespace Collective_To_Do_Application.Views
                 }
                 catch
                 {
-                    //MessageBoxResult result = MessageBox.Show("Do you want to close this window?");
-                    //Dispatcher.BeginInvoke(new Action(() => MessageBox.Show(result)));
+                    Dispatcher.BeginInvoke(new Action(() => MessageBox.Show($"Can't find" +
+                        $"resource CheckBoxTemplate")));
                 }
 
                 templateColumn.Header = "IsDone";
