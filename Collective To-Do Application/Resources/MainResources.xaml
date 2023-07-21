@@ -114,11 +114,9 @@
                             </Rectangle.Fill>
                         </Rectangle>
                         <Rectangle
-                            x:Name="R_Outline"
                             Stroke="#000"
                             StrokeThickness="1"/>
                         <ContentPresenter
-                            x:Name="content"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Margin="10"/>

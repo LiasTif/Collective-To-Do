@@ -58,12 +58,14 @@
                         <Button
                             Content="Profile"
                             FontFamily="Dongle"
-                            FontWeight="Light"/>
+                            FontWeight="Light"
+                            Command="{Binding NavigateProfileViewCommand}"/>
                         <Button
                             Content="Add Task"
                             Margin="5,0,5,0"
                             FontFamily="Dongle"
-                            FontWeight="Light"/>
+                            FontWeight="Light"
+                            Command="{Binding OpenAddTaskWindowCommand}"/>
                         <Button
                             Content="Exit"
                             FontFamily="Dongle"

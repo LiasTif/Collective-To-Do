@@ -26,7 +26,10 @@ namespace Collective_To_Do_Application.Views
         {
             if (e.Column.Header.ToString() == "IsDone")
             {
-                var templateColumn = new DataGridTemplateColumn();
+                var templateColumn = new DataGridTemplateColumn()
+                {
+                    Header = "IsDone"
+                };
 
                 try
                 {
@@ -37,8 +40,6 @@ namespace Collective_To_Do_Application.Views
                     Dispatcher.BeginInvoke(new Action(() => MessageBox.Show($"Can't find" +
                         $"resource CheckBoxTemplate")));
                 }
-
-                templateColumn.Header = "IsDone";
                 e.Column = templateColumn;
             }
         }
