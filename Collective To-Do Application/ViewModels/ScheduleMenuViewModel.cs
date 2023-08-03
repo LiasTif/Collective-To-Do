@@ -1,4 +1,5 @@
 ﻿using Collective_To_Do_Application.API;
+using Collective_To_Do_Application.ViewModels.Windows;
 using Collective_To_Do_Application.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -13,7 +14,11 @@ namespace Collective_To_Do_Application.ViewModels
 
         #region commands
         private void NavigateProfileView() => _navigationStore.CurrentViewModel = new ProfileViewModel(_navigationStore);
-        private void OpenAddTaskWindow() => new AddTaskWindow().ShowDialog();
+        private void OpenAddTaskWindow()
+        {
+            AddTaskWindow addTaskWindow = new() { DataContext = new AddTaskWindowViewModel(_navigationStore) };
+            addTaskWindow.ShowDialog();
+        }
 
         public ICommand ApplicationExitCommand { get; set; }
         public ICommand NavigateProfileViewCommand { get; set; }

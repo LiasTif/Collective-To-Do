@@ -10,7 +10,8 @@
         WindowStyle="ToolWindow" WindowStartupLocation="CenterOwner">
     <Grid>
         <ContentControl
-            Content="{Binding Source=vm:AddTaskViewModel}">
+            Content="{Binding Path=DataContext.AddTaskViewModelInstance,
+                              RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
             <ContentControl.Resources>
                 <DataTemplate DataType="{x:Type vm:AddTaskViewModel}">
                     <v:AddTaskView/>

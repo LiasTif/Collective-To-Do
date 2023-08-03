@@ -3,8 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ve="clr-namespace:Collective_To_Do_Application.Views.Elements"
              mc:Ignorable="d" d:Height="1080" d:Width="1960">
     <Grid Background="#fff">
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <!--Task Name-->
+            <ContentControl Content="{Binding AddTaskParamElement}"/>
+
+            <!--Task Type-->
+            <ContentControl Content="{Binding AddTaskParamElement}"/>
+
+            <!--Deadline-->
+            <ContentControl Content="{Binding AddTaskParamElement}"/>
+
+            <!--Assigned Person-->
+            <ContentControl Content="{Binding AddTaskParamElement}"/>
+        </StackPanel>
     </Grid>
 </UserControl>
