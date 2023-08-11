@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Collective_To_Do_Application.Views.Elements
 {
     /// <summary>
-    /// Interaction logic for AddTaskParamElement.xaml
+    /// Interaction logic for AddTaskButtonsElement.xaml
     /// </summary>
-    public partial class AddTaskParamElement : UserControl
+    public partial class AddTaskButtonsElement : UserControl
     {
-        public AddTaskParamElement()
+        public AddTaskButtonsElement()
         {
             InitializeComponent();
         }

@@ -8,21 +8,34 @@
     <Grid Background="#fff">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="1.25*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
             <!--Task Name-->
-            <ContentControl Content="{Binding AddTaskParamElement}"/>
+            <ContentControl Content="{Binding AddTaskTextBoxElement}"/>
 
             <!--Task Type-->
-            <ContentControl Content="{Binding AddTaskParamElement}"/>
+            <ContentControl
+                Grid.Row="1"
+                Content="{Binding AddTaskButtonsElement}"/>
 
             <!--Deadline-->
-            <ContentControl Content="{Binding AddTaskParamElement}"/>
+            <ContentControl
+                Grid.Row="2"
+                Content="{Binding AddTaskTextBoxElement}"/>
 
             <!--Assigned Person-->
-            <ContentControl Content="{Binding AddTaskParamElement}"/>
-        </StackPanel>
+            <ContentControl
+                Grid.Row="3"
+                Content="{Binding AddTaskTextBoxElement}"/>
+        </Grid>
     </Grid>
 </UserControl>

@@ -6,7 +6,8 @@ namespace Collective_To_Do_Application.ViewModels
 {
     public class AddTaskViewModel : ObservableObject
     {
-        public AddTaskParamElement AddTaskParamElement => new();
+        public AddTaskTextBoxElement AddTaskTextBoxElement => new();
+        public AddTaskButtonsElement AddTaskButtonsElement => new();
 
         public AddTaskViewModel(NavigationStore navigationStore) { }
     }
