@@ -38,15 +38,18 @@
                         Text="Task name"
                         Foreground="#000"/>
                 </Viewbox>
-                <Viewbox>
-                    <UniformGrid
-                    Rows="1"
+                <Viewbox
                     Margin="20"
                     Grid.ColumnSpan="3"
                     Grid.Row="1">
-                        <Button Style="{StaticResource btMain}"/>
-                        <Button Style="{StaticResource btMain}"/>
-                    </UniformGrid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Style="{DynamicResource btMain}"/>
+                        <Button Style="{DynamicResource btMain}" Grid.Column="1"/>
+                    </Grid>
                 </Viewbox>
             </Grid>
         </Border>

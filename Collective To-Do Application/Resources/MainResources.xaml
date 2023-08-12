@@ -142,7 +142,7 @@
                     <Border
                         CornerRadius="5"
                         Margin="5"
-                        Background="#737373">
+                        Background="#7F737373">
                         <Viewbox HorizontalAlignment="Left">
                             <TextBox
                                 Text="{TemplateBinding Text}"
@@ -160,10 +160,14 @@
     <!--#region AddTaskButtonsElement-->
     <Style TargetType="{x:Type Button}" x:Key="btMain">
         <Setter Property="Margin" Value="15"/>
+        <Setter Property="Content" Value="OneTime"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="#fff"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="#737373" CornerRadius="5">
+                    <Border Background="#7F737373" CornerRadius="5">
                         <ContentPresenter/>
                     </Border>
                 </ControlTemplate>
@@ -172,6 +176,9 @@
         <Style.Triggers>
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Padding" Value="15"/>
+                <Setter Property="Content" Value="Repeated"/>
+                <Setter Property="Background" Value="#FF5757"/>
             </Trigger>
             <Trigger Property="IsMouseOver" Value="False">
                 <Setter Property="Background" Value="Transparent"/>
