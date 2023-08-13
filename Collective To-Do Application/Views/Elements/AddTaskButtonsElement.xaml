@@ -38,19 +38,29 @@
                         Text="Task name"
                         Foreground="#000"/>
                 </Viewbox>
-                <Viewbox
+                <Grid
                     Margin="20"
                     Grid.ColumnSpan="3"
                     Grid.Row="1">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Viewbox Grid.Row="2" Grid.RowSpan="2" x:Name="vbButtFirst">
                         <Button Style="{DynamicResource btMain}"/>
-                        <Button Style="{DynamicResource btMain}" Grid.Column="1"/>
-                    </Grid>
-                </Viewbox>
+                    </Viewbox>
+                    <Viewbox Grid.Row="2" Grid.RowSpan="2" Grid.Column="1">
+                        <Button Style="{DynamicResource btMain}"/>
+                    </Viewbox>
+                </Grid>
             </Grid>
         </Border>
     </Grid>
