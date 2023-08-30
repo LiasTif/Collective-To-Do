@@ -3,12 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Collective_To_Do_Application.Views.Elements"
+             xmlns:c="clr-namespace:Collective_To_Do_Application.Conventers"
              mc:Ignorable="d" d:Height="450" d:Width="800">
 
     <UserControl.Resources>
-        <ResourceDictionary
-            Source="pack://application:,,,/Collective To-Do Application;component/Resources/MainResources.xaml"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Collective To-Do Application;component/Resources/MainResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </UserControl.Resources>
 
     <Grid>
@@ -35,7 +38,7 @@
                     Grid.Column="1">
                     <TextBlock
                         HorizontalAlignment="Center"
-                        Text="Task name"
+                        Text="Task type"
                         Foreground="#000"/>
                 </Viewbox>
                 <Grid
@@ -55,10 +58,16 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Viewbox Grid.Row="2" Grid.RowSpan="2" x:Name="vbButtFirst">
-                        <Button Style="{DynamicResource btMain}"/>
+                        <RadioButton
+                            x:Name="rBt1"
+                            GroupName="Type"
+                            Style="{DynamicResource rBtMain}"/>
                     </Viewbox>
                     <Viewbox Grid.Row="2" Grid.RowSpan="2" Grid.Column="1">
-                        <Button Style="{DynamicResource btMain}"/>
+                        <RadioButton
+                            x:Name="rBt2"
+                            GroupName="Type"
+                            Style="{DynamicResource rBtMain}"/>
                     </Viewbox>
                 </Grid>
             </Grid>
