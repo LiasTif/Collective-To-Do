@@ -3,11 +3,11 @@
 namespace Collective_To_Do_Application.Views.Elements
 {
     /// <summary>
-    /// Interaction logic for AddTaskButtonsElement.xaml
+    /// Interaction logic for AddTaskDeadlineElement.xaml
     /// </summary>
-    public partial class AddTaskButtonsElement : UserControl
+    public partial class AddTaskDeadlineElement : UserControl
     {
-        public AddTaskButtonsElement()
+        public AddTaskDeadlineElement()
         {
             InitializeComponent();
         }

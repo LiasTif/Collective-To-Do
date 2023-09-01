@@ -159,7 +159,6 @@
 
     <!--#region AddTaskButtonsElement-->
     <Style TargetType="{x:Type RadioButton}" x:Key="rBtMain">
-        <Setter Property="Margin" Value="5"/>
         <Setter Property="Content" Value="OneTime"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -167,23 +166,29 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">
-                    <Border Background="#7F737373" CornerRadius="5">
+                    <Border Background="#7F737373" CornerRadius="5" x:Name="rbBorder">
                         <ContentPresenter Margin="2"/>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Content" Value="Repeated"/>
+                            <Setter Property="Margin" Value="-1"/>
+                            <Setter TargetName="rbBorder" Property="Background" Value="#FF5757"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
-            <Trigger Property="IsChecked" Value="True">
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="Content" Value="Repeated"/>
-                <Setter Property="Margin" Value="0"/>
-                <Setter Property="Background" Value="#FF5757"/>
-            </Trigger>
-            <Trigger Property="IsMouseOver" Value="False">
-                <Setter Property="Background" Value="Transparent"/>
-            </Trigger>
-        </Style.Triggers>
+    </Style>
+    <!--#endregion-->
+    <!--#region AddTaskButtonsElement-->
+    <Style TargetType="{x:Type Border}" x:Key="bdMain">
+        <Setter Property="Background" Value="#7F737373"/>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}" x:Key="tbMain">
+        <Setter Property="Foreground" Value="#fff"/>
+    </Style>
+    <Style TargetType="{x:Type DatePicker}" x:Key="dpMain">
     </Style>
     <!--#endregion-->
 </ResourceDictionary>

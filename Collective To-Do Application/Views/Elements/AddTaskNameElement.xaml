@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Collective_To_Do_Application.Views.Elements.AddTaskTextBoxElement"
+﻿<UserControl x:Class="Collective_To_Do_Application.Views.Elements.AddTaskNameElement"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -28,6 +28,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
+                <!--#region Main label-->
                 <Viewbox
                     Margin="5,5,0,5"
                     HorizontalAlignment="Center"
@@ -37,11 +38,14 @@
                         Text="Task name"
                         Foreground="#000"/>
                 </Viewbox>
+                <!--#endregion-->
+                <!--#region Main textBox-->
                 <TextBox
                         x:Name="tbMain"
                         Grid.Row="1"
                         Grid.ColumnSpan="3"
                         Style="{StaticResource tboxMain}"/>
+                <!--#endregion-->
             </Grid>
         </Border>
     </Grid>
