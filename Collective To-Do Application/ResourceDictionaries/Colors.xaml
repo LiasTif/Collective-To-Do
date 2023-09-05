@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="ControlLightColor">#7F737373</Color>
+    <Color x:Key="ControlAccentColor">#FF5757</Color>
+
+    <Color x:Key="ActiveElementColor">#000</Color>
+    <Color x:Key="UnactiveElementColor">#fff</Color>
+
+</ResourceDictionary>

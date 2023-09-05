@@ -2,32 +2,9 @@
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Color x:Key="ControlLightColor">#7F737373</Color>
-    <Color x:Key="ControlAccentColor">#FF5757</Color>
-
-    <Color x:Key="ActiveElementColor">#000</Color>
-    <Color x:Key="UnactiveElementColor">#fff</Color>
-
-    <!--#region userInitElementsView styles-->
-    <Style TargetType="Viewbox" x:Key="tbx-vbRegistrationView">
-        <Setter Property="HorizontalAlignment" Value="Right"/>
-        <Setter Property="Margin" Value="0,20,20,10"/>
-        <Setter Property="MaxHeight" Value="75"/>
-        <Setter Property="Grid.Column" Value="1"/>
-    </Style>
-    <Style TargetType="TextBox" x:Key="tbxPinRegistrationView">
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="MinWidth" Value="17"/>
-        <Setter Property="MaxLength" Value="1"/>
-    </Style>
-    <Style
-        TargetType="TextBox"
-        BasedOn="{StaticResource tbxPinRegistrationView}"
-        x:Key="tbxFirtPinRegistrationView">
-        <Setter Property="Margin" Value="0"/>
-    </Style>
-    <!--#endregion-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Colors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
 
     <!--#region ScheduleMenuView styles-->
     <Style TargetType="{x:Type DataGridColumnHeader}" x:Key="dgColumnHeader">
