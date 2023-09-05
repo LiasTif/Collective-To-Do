@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:v="clr-namespace:Collective_To_Do_Application.Views"
         xmlns:vm="clr-namespace:Collective_To_Do_Application.ViewModels"
-        xmlns:vmWin="clr-namespace:Collective_To_Do_Application.ViewModels.Windows"
         mc:Ignorable="d" Title="Collective To-Do" d:Height="1080" d:Width="1960"
         MinWidth="800" MinHeight="600" WindowStartupLocation="CenterScreen">
+    
     <Grid>
         <ContentControl
             Content="{Binding Path=DataContext.CurrentViewModel,

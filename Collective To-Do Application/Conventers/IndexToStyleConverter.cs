@@ -20,7 +20,7 @@ namespace Collective_To_Do_Application.Conventers
         /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (Application.LoadComponent(new Uri("/Collective To-Do Application;component/Resources/MainResources.xaml", UriKind.Relative))
+            if (Application.LoadComponent(new Uri("/Collective To-Do Application;component/ResourceDictionaries/MainResources.xaml", UriKind.Relative))
                 is ResourceDictionary uri)
             {
                 ResourceDictionary dictionary = uri;

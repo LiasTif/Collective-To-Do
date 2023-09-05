@@ -10,7 +10,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Collective To-Do Application;component/Resources/MainResources.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Collective To-Do Application;component/ResourceDictionaries/MainResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <c:EnterButtonTextConventer x:Key="EnterButtonTextConventer"/>
             <c:IndexToStyleConverter x:Key="IndexToStyleConverter"/>
