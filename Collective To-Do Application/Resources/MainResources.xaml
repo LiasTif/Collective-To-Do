@@ -1,7 +1,12 @@
 ﻿  <ResourceDictionary x:Class="Collective_To_Do_Application.Resources.MainResources"
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:c="clr-namespace:Collective_To_Do_Application.Conventers">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="ControlLightColor">#7F737373</Color>
+    <Color x:Key="ControlAccentColor">#FF5757</Color>
+
+    <Color x:Key="ActiveElementColor">#000</Color>
+    <Color x:Key="UnactiveElementColor">#fff</Color>
 
     <!--#region userInitElementsView styles-->
     <Style TargetType="Viewbox" x:Key="tbx-vbRegistrationView">
@@ -29,8 +34,12 @@
         <Style.Resources>
             <!-- This style is required for the column resize thumbs -->
             <Style x:Key="ColumnHeaderGripperStyle" TargetType="{x:Type Thumb}">
-                <Setter Property="Width" Value="2"/>
-                <Setter Property="Background" Value="#737373"/>
+                <Setter Property="Width" Value="3"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="{DynamicResource ActiveElementColor}"/>
+                    </Setter.Value>
+                </Setter>
                 <Setter Property="Cursor" Value="SizeWE" />
                 <Setter Property="Template">
                     <Setter.Value>
@@ -46,7 +55,10 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
-                    <Grid Background="White">
+                    <Grid>
+                        <Grid.Background>
+                            <SolidColorBrush Color="{DynamicResource UnactiveElementColor}"/>
+                        </Grid.Background>
 
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -65,7 +77,11 @@
                             HorizontalAlignment="Right"
                             MaxHeight="20"
                             Style="{StaticResource ColumnHeaderGripperStyle}"/>
-                        <Rectangle Grid.Row="2" Height="2" Stroke="#000"/>
+                        <Rectangle Grid.Row="2" Height="2">
+                            <Rectangle.Fill>
+                                <SolidColorBrush Color="{DynamicResource ActiveElementColor}"/>
+                            </Rectangle.Fill>
+                        </Rectangle>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -80,13 +96,25 @@
 
     <Style TargetType="{x:Type DataGridCell}" x:Key="dgCell">
         <Setter Property="Margin" Value="5,0,5,0"/>
-        <Setter Property="Background" Value="#fff"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Color="{DynamicResource UnactiveElementColor}"/>
+            </Setter.Value>
+        </Setter>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="#fff"/>
-                <Setter Property="Foreground" Value="#000"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="{DynamicResource UnactiveElementColor}"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Foreground">
+                    <Setter.Value>
+                        <SolidColorBrush Color="{DynamicResource ActiveElementColor}"/>
+                    </Setter.Value>
+                </Setter>
                 <Setter Property="BorderBrush" Value="{x:Null}"/>
             </Trigger>
         </Style.Triggers>
@@ -99,7 +127,11 @@
     </DataTemplate>
 
     <Style TargetType="{x:Type CheckBox}" x:Key="dgCheckBoxStyle">
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Color="Transparent"/>
+            </Setter.Value>
+        </Setter>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -111,8 +143,11 @@
                             </Rectangle.Fill>
                         </Rectangle>
                         <Rectangle
-                            Stroke="#000"
-                            StrokeThickness="1"/>
+                            StrokeThickness="1">
+                            <Rectangle.Stroke>
+                                <SolidColorBrush Color="{DynamicResource ActiveElementColor}"/>
+                            </Rectangle.Stroke>
+                        </Rectangle>
                         <ContentPresenter
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
@@ -122,7 +157,7 @@
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="R_Filling" Property="Fill">
                                 <Setter.Value>
-                                    <SolidColorBrush Color="#000"/>
+                                    <SolidColorBrush Color="{DynamicResource ActiveElementColor}"/>
                                 </Setter.Value>
                             </Setter>
                         </Trigger>
@@ -141,14 +176,19 @@
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border
                         CornerRadius="5"
-                        Margin="5"
-                        Background="#7F737373">
+                        Margin="5">
+                        <Border.Background>
+                            <SolidColorBrush Color="{DynamicResource ControlLightColor}"/>
+                        </Border.Background>
                         <Viewbox HorizontalAlignment="Left">
                             <TextBox
                                 Text="{TemplateBinding Text}"
                                 BorderThickness="0"
-                                Foreground="#fff"
-                                Background="{x:Null}"/>
+                                Background="{x:Null}">
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="{DynamicResource UnactiveElementColor}"/>
+                                </TextBlock.Foreground>
+                            </TextBox>
                         </Viewbox>
                     </Border>
                 </ControlTemplate>
@@ -162,18 +202,30 @@
         <Setter Property="Content" Value="OneTime"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Foreground" Value="#fff"/>
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <SolidColorBrush Color="{DynamicResource UnactiveElementColor}"/>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">
-                    <Border Background="#7F737373" CornerRadius="5" x:Name="rbBorder">
+                    <Border CornerRadius="5" x:Name="rbBorder">
+                        <Border.Background>
+                            <SolidColorBrush Color="{DynamicResource ControlLightColor}"/>
+                        </Border.Background>
+                        
                         <ContentPresenter Margin="2"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
                             <Setter Property="Content" Value="Repeated"/>
                             <Setter Property="Margin" Value="-1"/>
-                            <Setter TargetName="rbBorder" Property="Background" Value="#FF5757"/>
+                            <Setter TargetName="rbBorder" Property="Background">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="{DynamicResource ControlAccentColor}"/>
+                                </Setter.Value>
+                            </Setter>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -181,12 +233,21 @@
         </Setter>
     </Style>
     <!--#endregion-->
-    <!--#region AddTaskButtonsElement-->
+        
+    <!--#region AddTaskDeadlineElement-->
     <Style TargetType="{x:Type Border}" x:Key="bdMain">
-        <Setter Property="Background" Value="#7F737373"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Color="{DynamicResource ControlLightColor}"/>
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style TargetType="{x:Type TextBlock}" x:Key="tbMain">
-        <Setter Property="Foreground" Value="#fff"/>
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <SolidColorBrush Color="{DynamicResource UnactiveElementColor}"/>
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style TargetType="{x:Type DatePicker}" x:Key="dpMain">
     </Style>

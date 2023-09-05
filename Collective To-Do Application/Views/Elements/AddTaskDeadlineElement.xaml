@@ -52,11 +52,6 @@
                         </Grid.ColumnDefinitions>
                         
                         <Viewbox Grid.Column="1">
-                            <TextBlock
-                                Text="00.00.0000"
-                                Style="{StaticResource tbMain}"/>
-                        </Viewbox>
-                        <Viewbox Grid.Column="2">
                             <DatePicker Style="{StaticResource dpMain}"/>
                         </Viewbox>
                     </Grid>
