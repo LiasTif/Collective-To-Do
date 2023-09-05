@@ -21,7 +21,7 @@ namespace Collective_To_Do_Application.Conventers
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (Application.LoadComponent(
-                new Uri("/Collective To-Do Application;component/ResourceDictionaries/UserInitElementsViewResources.xaml",
+                new Uri("/Collective To-Do Application;component/ResourceDictionaries/UserInitElementsViewDictionary.xaml",
                 UriKind.Relative)) is ResourceDictionary dictionary)
             {
                 // set style to TextBox depending on whether he is the first on the list
