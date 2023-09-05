@@ -20,11 +20,10 @@ namespace Collective_To_Do_Application.Conventers
         /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (Application.LoadComponent(new Uri("/Collective To-Do Application;component/ResourceDictionaries/MainResources.xaml", UriKind.Relative))
-                is ResourceDictionary uri)
+            if (Application.LoadComponent(
+                new Uri("/Collective To-Do Application;component/ResourceDictionaries/UserInitElementsViewResources.xaml",
+                UriKind.Relative)) is ResourceDictionary dictionary)
             {
-                ResourceDictionary dictionary = uri;
-
                 // set style to TextBox depending on whether he is the first on the list
                 return (int)value == 0 ? dictionary["tbxFirtPinRegistrationView"] : dictionary["tbxPinRegistrationView"];
             }
