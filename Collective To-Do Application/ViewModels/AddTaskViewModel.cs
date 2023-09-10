@@ -9,6 +9,7 @@ namespace Collective_To_Do_Application.ViewModels
         public AddTaskDeadlineElement AddTaskDeadlineElement => new();
         public AddTaskNameElement AddTaskNameElement => new();
         public AddTaskButtonsElement AddTaskButtonsElement => new();
+        public AddTaskAssignPersonElement AddTaskAssignPersonElement => new();
 
         public AddTaskViewModel(NavigationStore navigationStore) { }
     }

@@ -35,7 +35,7 @@
                     Grid.Column="1">
                     <TextBlock
                         HorizontalAlignment="Center"
-                        Text="Deadline"
+                        Text="Assigned Person" 
                         Foreground="#000"/>
                 </Viewbox>
                 <!--#endregion-->
@@ -52,7 +52,7 @@
                         </Grid.ColumnDefinitions>
 
                         <Viewbox Grid.Column="1">
-                            <DatePicker Style="{StaticResource dpMain}"/>
+                            <TextBlock Text="tif"/>
                         </Viewbox>
                     </Grid>
                 </Border>

@@ -12,4 +12,8 @@
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AddTaskElements\AddTaskElements.csproj" />
+  </ItemGroup>
+
 </Project>
