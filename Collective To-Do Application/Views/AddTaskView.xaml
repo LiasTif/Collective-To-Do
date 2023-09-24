@@ -12,7 +12,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid>
-            <Grid.RowDefinitions>
+            <Grid.RowDefinitions>                   
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>

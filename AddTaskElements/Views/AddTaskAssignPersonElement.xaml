@@ -7,7 +7,7 @@
     
     <UserControl.Resources>
         <ResourceDictionary
-            Source="pack://application:,,,/Collective To-Do Application;component/ResourceDictionaries/MainResources.xaml"/>
+            Source="pack://application:,,,/AddTaskElements;component/ResourceDictionaries/AddTaskElementsResources.xaml"/>
     </UserControl.Resources>
 
     <Grid>
@@ -51,9 +51,31 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Viewbox Grid.Column="1">
-                            <TextBlock Text="tif"/>
-                        </Viewbox>
+                        <ToggleButton
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            Margin="5"
+                            x:Name="TogglePopupButton" 
+                            Grid.ColumnSpan="2"
+                            Grid.Column="1">
+                            <Viewbox>
+                                <StackPanel>
+                                    <TextBlock
+                                        Margin="5"
+                                        Text="assing person"/>
+                                    
+                                    <Popup IsOpen="{Binding IsChecked, ElementName=TogglePopupButton}">
+                                        <Border BorderThickness="1" Background="#fff">
+                                            <ListBox>
+                                                <ListBoxItem Content="Tif"/>
+                                                <ListBoxItem Content="Aiden"/>
+                                                <ListBoxItem Content="Tifer"/>
+                                            </ListBox>
+                                        </Border>
+                                    </Popup>
+                                </StackPanel>
+                            </Viewbox>
+                        </ToggleButton>
                     </Grid>
                 </Border>
                 <!--#endregion-->

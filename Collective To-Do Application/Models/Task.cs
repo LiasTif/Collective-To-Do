@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System;
-using TeamScheduleApp.Models;
 
 namespace Collective_To_Do_Application.Models
 {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TeamScheduleApp.Models
+namespace Collective_To_Do_Application.Models
 {
     /// <summary>
     /// A class that includes data about the user

@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Views\AddTaskAssignPersonElement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

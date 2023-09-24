@@ -7,7 +7,7 @@
     
     <UserControl.Resources>
         <ResourceDictionary
-            Source="pack://application:,,,/Collective To-Do Application;component/ResourceDictionaries/MainResources.xaml"/>
+            Source="pack://application:,,,/AddTaskElements;component/ResourceDictionaries/AddTaskElementsResources.xaml"/>
     </UserControl.Resources>
     
     <Grid>

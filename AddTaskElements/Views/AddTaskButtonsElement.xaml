@@ -8,7 +8,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Collective To-Do Application;component/ResourceDictionaries/MainResources.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/AddTaskElements;component/ResourceDictionaries/AddTaskElementsResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
