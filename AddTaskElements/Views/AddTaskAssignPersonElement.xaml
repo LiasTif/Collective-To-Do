@@ -52,19 +52,51 @@
                         </Grid.ColumnDefinitions>
 
                         <ToggleButton
-                            HorizontalContentAlignment="Center"
-                            VerticalContentAlignment="Center"
-                            Margin="5"
-                            x:Name="TogglePopupButton" 
-                            Grid.ColumnSpan="2"
-                            Grid.Column="1">
+                            Style="{DynamicResource tgbtPeopleList}"
+                            x:Name="TogglePopupButton">
                             <Viewbox>
-                                <StackPanel>
+                                <StackPanel Orientation="Horizontal">
                                     <TextBlock
-                                        Margin="5"
-                                        Text="assing person"/>
-                                    
-                                    <Popup IsOpen="{Binding IsChecked, ElementName=TogglePopupButton}">
+                                        Text="assing person"
+                                        Style="{DynamicResource tblMainInToggleButton}">
+                                        <TextBlock.Foreground>
+                                            <LinearGradientBrush>
+                                                <GradientStop
+                                                    x:Name="GradientStop1"
+                                                    Color="{DynamicResource ControlLightColor}"
+                                                    Offset="0.0"/>
+                                                <GradientStop
+                                                    x:Name="GradientStop2"
+                                                    Color="{DynamicResource ControlAccentColor}"
+                                                    Offset="0.0"/>
+                                                <GradientStop
+                                                    x:Name="GradientStop3"
+                                                    Color="{DynamicResource ControlLightColor}"
+                                                    Offset="1.0"/>
+                                            </LinearGradientBrush>
+                                        </TextBlock.Foreground>
+                                        <TextBlock.Triggers>
+                                            <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation 
+                                                            Storyboard.TargetName="GradientStop2"
+                                                            Storyboard.TargetProperty="Offset"
+                                                            From="0.0" To="1.0" Duration="0:0:1"
+                                                            AutoReverse="True" RepeatBehavior="Forever"/>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </TextBlock.Triggers>
+                                    </TextBlock>
+                                    <Image
+                                        x:Name="ListArrow"
+                                        Style="{StaticResource imgPeopleListArrow}"/>
+
+                                    <Popup
+                                        Placement="Top"
+                                        PlacementTarget="{Binding ElementName=ListArrow}"
+                                        IsOpen="{Binding IsChecked, ElementName=TogglePopupButton}">
                                         <Border BorderThickness="1" Background="#fff">
                                             <ListBox>
                                                 <ListBoxItem Content="Tif"/>

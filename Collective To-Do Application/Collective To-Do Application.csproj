@@ -16,4 +16,10 @@
     <ProjectReference Include="..\AddTaskElements\AddTaskElements.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Update="ResourceDictionaries\Colors.xaml">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+
 </Project>

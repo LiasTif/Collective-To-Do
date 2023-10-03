@@ -35,8 +35,14 @@
                     Grid.Column="1">
                     <TextBlock
                         HorizontalAlignment="Center"
-                        Text="Task name"
-                        Foreground="#000"/>
+                        Text="Task name">
+                        <TextBlock.Foreground>
+                            <RadialGradientBrush>
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </RadialGradientBrush>
+                        </TextBlock.Foreground>
+                    </TextBlock>
                 </Viewbox>
                 <!--#endregion-->
                 <!--#region Main textBox-->

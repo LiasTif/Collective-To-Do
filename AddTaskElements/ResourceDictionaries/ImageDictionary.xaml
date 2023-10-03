@@ -1,0 +1,4 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <BitmapImage x:Key="MainArrow" UriSource="pack://application:,,,/AddTaskElements;component/Data/Icons/arrow.png"/>
+</ResourceDictionary>
