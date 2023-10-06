@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Collective_To_Do_Application.Views.Elements
+namespace AddTaskElements.Views
 {
     /// <summary>
     /// Interaction logic for AddTaskDeadlineElement.xaml

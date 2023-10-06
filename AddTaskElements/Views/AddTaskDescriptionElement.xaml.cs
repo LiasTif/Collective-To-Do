@@ -3,11 +3,11 @@
 namespace AddTaskElements.Views
 {
     /// <summary>
-    /// Interaction logic for AddTaskParamElement.xaml
+    /// Interaction logic for AddTaskDescriptionElement.xaml
     /// </summary>
-    public partial class AddTaskNameElement : UserControl
+    public partial class AddTaskDescriptionElement : UserControl
     {
-        public AddTaskNameElement()
+        public AddTaskDescriptionElement()
         {
             InitializeComponent();
         }

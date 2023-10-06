@@ -4,37 +4,41 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d" d:Height="1080" d:Width="1960">
-  
+
     <Grid Background="#fff">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="1.25*"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        <Grid>
-            <Grid.RowDefinitions>                   
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+        <!--Task Name-->
+        <ContentControl Content="{Binding AddTaskNameElement}"/>
 
-            <!--Task Name-->
-            <ContentControl Content="{Binding AddTaskNameElement}"/>
+        <!--Task Type-->
+        <ContentControl
+            Grid.Row="1"
+            Content="{Binding AddTaskButtonsElement}"/>
 
-            <!--Task Type-->
-            <ContentControl
-                Grid.Row="1"
-                Content="{Binding AddTaskButtonsElement}"/>
+        <!--Deadline-->
+        <ContentControl
+            Grid.Row="2"
+            Content="{Binding AddTaskDeadlineElement}"/>
 
-            <!--Deadline-->
-            <ContentControl
-                Grid.Row="2"
-                Content="{Binding AddTaskDeadlineElement}"/>
-            <!--Assigned Person-->
-            <ContentControl
-                Grid.Row="3"
-                Content="{Binding AddTaskAssignPersonElement}"/>
-        </Grid>
+        <!--Assigned Person-->
+        <ContentControl
+            Grid.Row="3"
+            Content="{Binding AddTaskAssignPersonElement}"/>
+
+        <!--Description-->
+        <ContentControl
+            Grid.Column="1"
+            Grid.RowSpan="2"
+            Content="{Binding AddTaskDescriptionElement}"/>
     </Grid>
 </UserControl>

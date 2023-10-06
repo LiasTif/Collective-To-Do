@@ -1,5 +1,5 @@
 ﻿using Collective_To_Do_Application.API;
-using Collective_To_Do_Application.Views.Elements;
+using AddTaskElements.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Collective_To_Do_Application.ViewModels
@@ -10,6 +10,7 @@ namespace Collective_To_Do_Application.ViewModels
         public AddTaskNameElement AddTaskNameElement => new();
         public AddTaskButtonsElement AddTaskButtonsElement => new();
         public AddTaskAssignPersonElement AddTaskAssignPersonElement => new();
+        public AddTaskDescriptionElement AddTaskDescriptionElement => new();
 
         public AddTaskViewModel(NavigationStore navigationStore) { }
     }
