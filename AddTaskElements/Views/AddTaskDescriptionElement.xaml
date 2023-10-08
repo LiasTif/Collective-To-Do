@@ -45,9 +45,9 @@
                 
                 <!--#region Main textBox-->
                 <TextBox
+                    Style="{StaticResource tboxMain}"
                     Grid.Row="1"
-                    Grid.ColumnSpan="3"
-                    Style="{StaticResource tboxMain}"/>
+                    Grid.ColumnSpan="3"/>
                 <!--#endregion-->
             </Grid>
         </Border>

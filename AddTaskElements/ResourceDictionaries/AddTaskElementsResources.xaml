@@ -17,17 +17,18 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <!--#endregion-->
-    
-    <!--#region AddTaskNameElement-->
     <Style TargetType="{x:Type TextBox}" x:Key="tboxMain">
         <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Style="{StaticResource bdMain}">
-                        <Viewbox HorizontalAlignment="Left">
+                        <Viewbox
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left">
                             <TextBox
+                                Width="350"
+                                TextWrapping="Wrap"
                                 Text="{TemplateBinding Text}"
                                 BorderThickness="0"
                                 Background="{x:Null}">
@@ -44,7 +45,7 @@
     <!--#endregion-->
 
     <!--#region AddTaskButtonsElement-->
-    <Style TargetType="{x:Type RadioButton}" x:Key="rBtMain">
+    <Style TargetType="{x:Type RadioButton}" x:Key="rBtOneTime">
         <Setter Property="Content" Value="OneTime"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -65,8 +66,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Content" Value="Repeated"/>
-                            <Setter Property="Margin" Value="-1"/>
+                            <Setter Property="Margin" Value="-3"/>
                             <Setter TargetName="rbBorder" Property="Background">
                                 <Setter.Value>
                                     <SolidColorBrush Color="{DynamicResource ControlAccentColor}"/>
@@ -77,6 +77,13 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+
+    <Style
+        TargetType="{x:Type RadioButton}"
+        x:Key="rBtRepeated"
+        BasedOn="{StaticResource rBtOneTime}">
+        <Setter Property="Content" Value="Repeated"/>
     </Style>
     <!--#endregion-->
 

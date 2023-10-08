@@ -7,7 +7,13 @@
         xmlns:vm="clr-namespace:Collective_To_Do_Application.ViewModels"
         mc:Ignorable="d" Title="Collective To-Do" d:Height="1080" d:Width="1960"
         MinWidth="800" MinHeight="600" WindowStartupLocation="CenterScreen">
-    
+
+    <Window.Style>
+        <Style TargetType="{x:Type Window}">
+            <Setter Property="FontFamily" Value="Dongle" />
+        </Style>
+    </Window.Style>
+
     <Grid>
         <ContentControl
             Content="{Binding Path=DataContext.CurrentViewModel,

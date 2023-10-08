@@ -63,13 +63,13 @@
                         <RadioButton
                             x:Name="rBt1"
                             GroupName="Type"
-                            Style="{DynamicResource rBtMain}"/>
+                            Style="{DynamicResource rBtOneTime}"/>
                     </Viewbox>
                     <Viewbox Grid.Row="2" Grid.RowSpan="2" Grid.Column="1">
                         <RadioButton
                             x:Name="rBt2"
                             GroupName="Type"
-                            Style="{DynamicResource rBtMain}"/>
+                            Style="{DynamicResource rBtRepeated}"/>
                     </Viewbox>
                 </Grid>
                 <!--#endregion-->

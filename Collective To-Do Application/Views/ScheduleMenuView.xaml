@@ -27,7 +27,6 @@
             <Viewbox Grid.Column="1">
                 <TextBlock
                     Text="TeamSchedule"
-                    FontFamily="Dongle"
                     FontWeight="Regular"
                     Margin="1"/>
             </Viewbox>
@@ -53,22 +52,18 @@
                         <Button
                             Content="Refresh"
                             Margin="0,0,5,0"
-                            FontFamily="Dongle"
                             FontWeight="Light"/>
                         <Button
                             Content="Profile"
-                            FontFamily="Dongle"
                             FontWeight="Light"
                             Command="{Binding NavigateProfileViewCommand}"/>
                         <Button
                             Content="Add Task"
                             Margin="5,0,5,0"
-                            FontFamily="Dongle"
                             FontWeight="Light"
                             Command="{Binding OpenAddTaskWindowCommand}"/>
                         <Button
                             Content="Exit"
-                            FontFamily="Dongle"
                             FontWeight="Light"
                             Command="{Binding ApplicationExitCommand}"/>
                     </StackPanel>
